@@ -29,3 +29,12 @@ jobs:
       # Uncomment the line below if you want to fail the current step
       # - run: return 1
       - destroy_environment
+
+
+workflows:
+  # Name the workflow "welcome"
+  my_workflow:
+    # Run the welcome/run job in its own container
+    jobs:
+      # - welcome/run
+      - create_infrastructure
