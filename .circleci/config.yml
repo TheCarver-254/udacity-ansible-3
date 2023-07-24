@@ -42,10 +42,30 @@ jobs:
       - destroy_environment
 
 
+  # Exercise: Config and Deployment
+  configure_infrastructure: 
+    docker:
+      - image: python:3.7-alpine3.11
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints: ["24:73:c3:52:17:5f:66:f1:c8:33:07:db:46:13:04:6a"] # You can get this ID in the section where you registered the SSH Key
+      - run:
+          name: Install dependencies
+          command: |
+            # install the dependencies needed for your playbook
+            apk add --update ansible 
+      - run:
+          name: Configure server
+          command: |
+            ansible-playbook -i inventory main2.yml
+
+
 workflows:
   # Name the workflow "welcome"
   my_workflow:
     # Run the welcome/run job in its own container
     jobs:
       # - welcome/run
-      - create_infrastructure
+      #- create_infrastructure
+      - configure_infrastructure

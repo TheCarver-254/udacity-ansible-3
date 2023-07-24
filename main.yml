@@ -1,5 +1,7 @@
 ---
 ## Playbook file from the Exercise: Remote Control Using Ansible
+#The Ansible Playbook above is responsible for configuring the EC2 ...
+#...instance and copy over the files/index.js file.
 - name: hello world webpage
   hosts: localhost
   roles:
