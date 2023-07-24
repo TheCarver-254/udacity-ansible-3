@@ -1,0 +1,17 @@
+---
+#Exercise: Configuration and Deployment
+#In this exercise, a CircleCI job will run the playbook for you ...
+#..to configure an EC2 instance and copy production files
+
+---
+# Exercise for setting up a web server in an EC
+- name: Exercise for setting up a web server in an EC 
+  # hosts: web
+  # Use the public IP if the VM is already created
+  hosts: web
+  user: ubuntu
+  become: true
+  become_method: sudo
+  become_user: root
+  roles:
+   - setup
