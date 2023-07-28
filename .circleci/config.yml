@@ -71,4 +71,4 @@ workflows:
       - configure_infrastructure
 
 
-#ansible-playbook -i inventory main2.yml
+#ansible-playbook -i inventory main2.yml  
