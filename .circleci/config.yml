@@ -58,7 +58,7 @@ jobs:
       - run:
           name: Configure server
           command: |
-            ansible-playbook -i inventory main2.yml
+            ansible web -m ping -i inventory
 
 
 workflows:
@@ -69,3 +69,6 @@ workflows:
       # - welcome/run
       #- create_infrastructure
       - configure_infrastructure
+
+
+#ansible-playbook -i inventory main2.yml
